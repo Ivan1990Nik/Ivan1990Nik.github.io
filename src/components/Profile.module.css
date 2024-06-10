@@ -1,0 +1,20 @@
+.content {
+  border-radius: 10px;
+  grid-area: c;
+  background-color: rgba(128, 179, 151, 0.61);
+}
+
+.content img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.items {
+  color: rgb(109, 3, 3);
+}
+.item {
+  color: rgb(54, 19, 252);
+}
+.item.active {
+  color: rgb(19, 252, 38);
+}

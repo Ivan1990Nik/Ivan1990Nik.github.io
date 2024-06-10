@@ -1,0 +1,23 @@
+.item {
+  color: #1f0202;
+  margin: 10px;
+  color: rgb(255, 255, 255);
+}
+.item:last-child {
+  color: #1f0202;
+  margin-top: 110px;
+}
+
+.nav {
+  border-radius: 15px;
+  padding:  5px 10px;
+  grid-area: n;
+  background-color: rgba(58, 27, 27, 0.329);
+  box-shadow: 10px 5px 5px rgba(80, 34, 34, 0.274);
+}
+.navi {
+  border-radius: 15px;
+  padding:  5px 10px;
+  grid-area: n;
+  background-color: #d6f0784d;
+}

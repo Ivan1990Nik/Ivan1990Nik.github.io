@@ -13,33 +13,6 @@
   grid-gap: 10px;
 }
 
-.header {
-  border-radius: 10px;
-  grid-area: h;
-  background-color: rgb(84, 78, 102);
-}
-.header img {
-  width: 70px;
-  border-radius: 50%;
-  margin: 4px;
-}
-.nav {
-  border-radius: 15px;
-  padding:  5px 10px;
-  grid-area: n;
-  background-color: rgb(72, 112, 243);
-}
-
-.content {
-  border-radius: 10px;
-  grid-area: c;
-  background-color: rgb(128, 179, 151);
-}
-
-.content img {
-  
-  border-radius: 10px;
-  width: 100%;
 
 
-}
+
