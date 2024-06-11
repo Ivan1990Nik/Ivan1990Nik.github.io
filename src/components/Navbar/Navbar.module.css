@@ -19,5 +19,5 @@
   border-radius: 15px;
   padding:  5px 10px;
   grid-area: n;
-  background-color: #d6f0784d;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.589) 0%, rgba(9, 9, 121, 0.589) 35%, rgba(0, 213, 255, 0.753) 100%);
 }
