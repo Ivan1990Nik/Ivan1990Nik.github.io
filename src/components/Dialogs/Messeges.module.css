@@ -22,7 +22,3 @@
   grid-area: n;
   background: linear-gradient(90deg, rgba(2, 0, 36, 0.589) 0%, rgba(9, 9, 121, 0.589) 35%, rgba(0, 213, 255, 0.753) 100%);
 }
-
-.item.active {
-  color: rgb(19, 252, 38);
-}

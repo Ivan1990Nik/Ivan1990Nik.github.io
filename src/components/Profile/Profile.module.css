@@ -1,8 +1,4 @@
-.content {
-  border-radius: 10px;
-  grid-area: c;
-  background: linear-gradient(90deg, rgba(0, 213, 255, 0.753) 0%, rgba(9, 9, 121, 0.205) 35%, rgba(2, 0, 36, 0.589) 100%);
-}
+
 
 .content img {
   border-radius: 10px;
