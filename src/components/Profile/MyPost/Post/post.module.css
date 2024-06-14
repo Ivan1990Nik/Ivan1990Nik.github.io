@@ -24,12 +24,12 @@ padding: 3px 0px 3px 18px;
   width: 80px;
   align-items: center;
   display: flex;
-  color: rgb(254, 255, 255);
-/*   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.582); */
+  color: #000e0b;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.582);
   border-radius: 40px;
-/*   background: linear-gradient(90deg, rgba(2, 0, 36, 0.322) 0%, rgba(9, 9, 121, 0.336) 35%, rgba(0, 60, 255, 0.418) 100%); */
+  background: #ff979770;
 }
 .like img{
-width: 30px;
+width: 25px;
 margin-right:10px;
 }

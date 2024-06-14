@@ -1,20 +1,23 @@
 import React from 'react';
-import navbar from "./Navbar.module.css";
+import nav from "./Navbar.module.css";
+import { NavLink } from 'react-router-dom';
+
+const linkActive = ({isActive}) => (isActive ? nav.activelink : nav.default);
 
 const Navbar = () => {
   return (
-    <div className={navbar.navi}>
-    <nav className={navbar.nav}>
-        <div className={navbar.item}>
-          <a href='/Profile'>Profile</a></div>
-        <div className={navbar.item}>
-          <a href='/Messeges'>Messeges</a></div>
-        <div className={navbar.item}>
-          <a href='/News'>News</a></div>
-        <div className={navbar.item}>
-          <a href='/navbar'>Music</a></div>
-        <div className={navbar.item}>
-          <a href='/Settings'>Settings</a></div>
+    <div className={nav.navi}>
+    <nav className={nav.nav}>
+        <div className={nav.item}>
+          <NavLink to='/Profile' className={linkActive}>Profile</NavLink></div>
+        <div className={nav.item}>
+          <NavLink to='/Dialogs' className={linkActive}>Messeges</NavLink></div>
+        <div className={nav.item}>
+          <NavLink to='/News' className={linkActive}>News</NavLink></div>
+        <div className={nav.item}>
+          <NavLink to='/navbar' className={linkActive}>Music</NavLink></div>
+        <div className={nav.item}>
+          <NavLink to='/Settings' className={linkActive}>Settings</NavLink></div>
       </nav>
 
       </div>

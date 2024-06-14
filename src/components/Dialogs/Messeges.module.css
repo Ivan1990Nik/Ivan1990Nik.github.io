@@ -1,24 +1,66 @@
-.item {
-  color: #1f0202;
-  margin: 10px;
-  color: rgb(255, 255, 255);
-}
-.item:last-child {
-  color: #1f0202;
-  margin-top: 110px;
+.dialogs {
+  display: grid;
+  grid-template-columns: 3fr 11fr;
+  padding: 10px;
 }
 
-.nav {
-  border-radius: 15px;
-  padding:  5px 10px;
-  grid-area: n;
-  background-color: rgba(58, 27, 27, 0.329);
+.dialogs__items {
+  margin-bottom: 100%;
+  display: block;
+  align-items: center;
+
+}
+
+.header {
+
+  padding: 10px;
+  text-align: center;
+  display: block;
+  margin-bottom: 40px;
+  font-size: 25px;
+  color: rgba(98, 89, 112, 0.884);
+}
+
+.dialogs__item {
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.dialogs__item:hover {
+  scale: 1.3;
+  transition: all 0.3s;
+}
+
+.nev__active {
+  
+  transition: all 0.3s;
+  padding: 0 10px 0px 0;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 10px;
+  font-size: 20px;
+  scale: 1.4;
+  color: rgba(226, 211, 0, 0.877);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(110, 87, 10, 0.993) 35%, rgb(255, 8, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   box-shadow: 10px 5px 5px rgba(80, 34, 34, 0.274);
-
-}
-.navi {
   border-radius: 15px;
-  padding:  5px 10px;
-  grid-area: n;
-  background: linear-gradient(90deg, rgba(2, 0, 36, 0.589) 0%, rgba(9, 9, 121, 0.589) 35%, rgba(0, 213, 255, 0.753) 100%);
+  border: solid 1px;
+}
+
+.defolt {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(9, 59, 32);
+}
+
+.messeges {
+  border-left: solid 2px;
+  text-align: center;
+}
+
+.messeg {
+  padding: 4px;
 }

@@ -1,7 +1,7 @@
 .item {
-  color: #1f0202;
+  font-size: 25px;
+  text-decoration: none;
   margin: 10px;
-  color: rgb(255, 255, 255);
 }
 .item:last-child {
   color: #1f0202;
@@ -9,6 +9,7 @@
 }
 
 .nav {
+  
   border-radius: 15px;
   padding:  5px 10px;
   grid-area: n;
@@ -16,13 +17,31 @@
   box-shadow: 10px 5px 5px rgba(80, 34, 34, 0.274);
 
 }
+
 .navi {
+  
   border-radius: 15px;
   padding:  5px 10px;
   grid-area: n;
   background: linear-gradient(90deg, rgba(2, 0, 36, 0.589) 0%, rgba(9, 9, 121, 0.589) 35%, rgba(0, 213, 255, 0.753) 100%);
 }
 
-.item.active {
-  color: rgb(19, 252, 38);
+.activelink {
+  
+  border-radius: 25px;
+  transition: all 0.3s;
+  padding: 0 10px 0px 0;
+  text-decoration: none;
+  padding-left: 10px;
+  border: solid 1px;
+  color: rgba(226, 211, 0, 0.877);
+  background: linear-gradient(90deg, rgb(200, 255, 0) 0%, rgba(255, 196, 0, 0.993) 35%, rgb(255, 8, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.default {
+  
+  text-decoration: none;
+  color: #bbff00b0;
 }

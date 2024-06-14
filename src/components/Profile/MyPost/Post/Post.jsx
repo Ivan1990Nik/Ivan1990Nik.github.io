@@ -10,7 +10,7 @@ const Post = (props) => {
       </div>
       <div className={post.like}>
         <img src={like_icon} alt="" />
-        <span> {props.likeNumber}</span>
+        <span>   {props.likeCount}</span>
       </div>
     </div>
   )
