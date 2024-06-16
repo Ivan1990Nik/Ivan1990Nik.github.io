@@ -1,12 +1,13 @@
 
 .item {
+  width: 400px;
   color: #ffffff;
   display: flex;
   align-items: center;
   border-radius: 30px;
   margin: 0px 10px 5px;
   box-shadow: 10px 5px 5px rgba(80, 34, 34, 0.274);
-padding: 3px 0px 3px 18px;
+padding: 3px 8px 3px 18px;
   background-color: rgba(18, 31, 31, 0.507);
   background: linear-gradient(90deg, rgba(2, 0, 36, 0.322) 0%, rgba(9, 9, 121, 0.336) 35%, rgba(0, 60, 255, 0.418) 100%);
 

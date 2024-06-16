@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
@@ -18,9 +19,11 @@ const App = (props) => {
       <div className='app-wraper-content'>
         <Routes >
           <Route path="/News" Component={News} />
-
           <Route path="/Profile" element={<Profile
-            state={props.state.profilePage} />} />
+            updeteNewPostText={props.updeteNewPostText}
+            addPost={props.addPost}
+            profilePage={props.state.profilePage} 
+            />} />
 
           <Route path="/*" Component={() => <Dialogs
             state={props.state.dialogsPage}

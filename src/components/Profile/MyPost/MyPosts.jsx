@@ -4,25 +4,37 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
 
-/* let posts = [
-    {id: 1, messeges: "Lorem data", age: 20, likeCount: 2},
-    {id: 2, messeges: "HLorem from", age: 210, likeCount: 75},
-] */
 
-let postsElements = props.posts.map ( (p, i) => <Post key={i} messeges={p.messeges} age={p.age} likeCount={p.likeCount}/>)
+  let postsElements = props.posts.map((p, i) => <Post key={i} messeges={p.messeges} likesCount={p.likesCount} />)
+
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    props.addPost();
+
+  }
+  let onPostChenge = () => {
+    let text = newPostElement.current.value;
+    props.updeteNewPostText(text);
+  }
+
+
   return (
     <div>
       <h3>My posts</h3>
-        <div>
-          <textarea></textarea>
-        </div>
-        <div>
-          <button>Add post</button>
-        </div>
-      <div className={Myposts.items}>
-      {postsElements}
+      <div>
+        <textarea onChange={onPostChenge}
+          ref={newPostElement}
+          value={props.newPostText} />
       </div>
-  </div>
+      <div>
+        <button onClick={addPost} >Add post</button>
+      </div>
+      <div className={Myposts.items}>
+        {postsElements}
+      </div>
+    </div>
+
   )
 }
 
