@@ -10,17 +10,22 @@ import News from './components/News/News';
 
 
 
-
-const App = () => {
+const App = (props) => {
   return (
     <div className='app-wraper'>
       <Header />
       <Navbar />
       <div className='app-wraper-content'>
         <Routes >
-          <Route path="/News"  Component={News} />
-          <Route path="/Profile" Component={Profile} />
-          <Route path="/*" Component={Dialogs} />
+          <Route path="/News" Component={News} />
+
+          <Route path="/Profile" element={<Profile
+            state={props.state.profilePage} />} />
+
+          <Route path="/*" Component={() => <Dialogs
+            state={props.state.dialogsPage}
+          />} />
+
         </Routes>
       </div>
     </div >
