@@ -15,14 +15,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderentireTree = (state) => {
 
   root.render(
-  <React.StrictMode>
-    <BrowserRouter >
-      <App state={state}
-      addPost={ store.addPost.bind(store) }
-      updeteNewPostText={store.updeteNewPostText.bind(store)} />
-    </BrowserRouter>
-  </React.StrictMode>
-);
+    <React.StrictMode>
+      <BrowserRouter >
+        <App
+          state={state}
+          dispatch={store.dispatch.bind(store)}
+          store={store} />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
 }
 
 rerenderentireTree(store.getState());
