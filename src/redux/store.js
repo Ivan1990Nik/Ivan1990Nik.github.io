@@ -1,4 +1,4 @@
-
+/* 
 import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer copy";
@@ -27,7 +27,7 @@ let store = {
         { id: 2, message: "How is your olga" },
         { id: 3, message: "Yo" },
       ],
-      newMessageBody: "13"
+      newMessageBody: ""
     },
     sidebar: {}
   },
@@ -47,7 +47,7 @@ let store = {
 
   }
 }
-
+ */
 
 
 
