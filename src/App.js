@@ -3,10 +3,10 @@ import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Dialogs from './components/Dialogs/Dialogs';
 
 import { Route, Routes } from 'react-router-dom';
 import News from './components/News/News';
+import DialogsContainer from './components/Dialogs/DialogsContaine';
 
 
 
@@ -20,13 +20,10 @@ const App = (props) => {
           <Route path="/News" Component={News} />
 
           <Route path="/Profile" element={<Profile
-          store={props.store}
-            dispatch={props.dispatch} />} />
+          store={props.store}/>} />
 
-          <Route path="/*" element={ <Dialogs
-            store={props.store}
-            dispatch={props.dispatch}
-          />} />
+          <Route path="/*" element={ <DialogsContainer
+            store={props.store}/>} />
 
         </Routes>
       </div>
