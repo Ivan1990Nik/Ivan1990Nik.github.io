@@ -20,10 +20,10 @@ const App = (props) => {
           <Route path="/News" Component={News} />
 
           <Route path="/Profile" element={<Profile
-          store={props.store}/>} />
+          /* store={props.store} *//>} />
 
           <Route path="/*" element={ <DialogsContainer
-            store={props.store}/>} />
+            /* store={props.store} *//>} />
 
         </Routes>
       </div>
