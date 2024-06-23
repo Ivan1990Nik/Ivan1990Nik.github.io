@@ -60,5 +60,6 @@ let store = {
 
 
 
-window.state = store;
+/* window.state = store;
 export default store;
+ */

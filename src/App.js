@@ -10,7 +10,7 @@ import DialogsContainer from './components/Dialogs/DialogsContaine';
 
 
 
-const App = (props) => {
+const App = () => {
   return (
     <div className='app-wraper'>
       <Header />
@@ -18,13 +18,8 @@ const App = (props) => {
       <div className='app-wraper-content'>
         <Routes >
           <Route path="/News" Component={News} />
-
-          <Route path="/Profile" element={<Profile
-          /* store={props.store} *//>} />
-
-          <Route path="/*" element={ <DialogsContainer
-            /* store={props.store} *//>} />
-
+          <Route path="/Profile" element={ <Profile />} />
+          <Route path="/*" element={ <DialogsContainer/>} />
         </Routes>
       </div>
     </div >
