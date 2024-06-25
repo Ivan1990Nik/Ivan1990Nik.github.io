@@ -27,11 +27,10 @@
 }
 
 .activelink {
-  
+
   border-radius: 25px;
   transition: all 0.3s;
   padding: 0 10px 0px 0;
-  text-decoration: none;
   padding-left: 10px;
   border: solid 1px;
   color: rgba(226, 211, 0, 0.877);
@@ -41,7 +40,10 @@
 
 }
 .default {
-  
   text-decoration: none;
   color: #bbff00b0;
+}
+
+.itemtwo {
+  margin-top: 50px;
 }
