@@ -1,15 +1,16 @@
 const FOLLOW = "FOLLOW";
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET-USERS";
+const SET_CURRENT_PAGE = "SET-CURRENT-PAGE";
+const SET_TOTAL_USERS_COUNT = "SET-TOTAL-USERS-COUNT";
 
 
 
 let initialState = {
-  users: [
-    { id: 1,photoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS151J63_ianQLfkTxq-rAzokYRXXOjJe435Q&usqp=CAU", followed: false, fullName: "ivan", status: "i am a boss", location: { city: "krasnodar", country: "Russia" } },
-    { id: 2,photoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS151J63_ianQLfkTxq-rAzokYRXXOjJe435Q&usqp=CAU", followed: true, fullName: "Olga", status: "i am a boss", location: { city: "tumen", country: "Russia" } },
-    { id: 3,photoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS151J63_ianQLfkTxq-rAzokYRXXOjJe435Q&usqp=CAU", followed: false, fullName: "Bogdan", status: "i am a boss", location: { city: "moscov", country: "Russia" } },
-  ]
+  users: [ ],
+  pageSize: 5,
+  totalUsersCount: 50,
+  currentPage: 2
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -36,7 +37,13 @@ const usersReducer = (state = initialState, action) => {
         })
       }
     case SET_USERS: {
-      return {...state, users: [...state.users, ...action.users ]}
+      return {...state, users: action.users }
+    }
+    case SET_CURRENT_PAGE: {
+      return {...state, currentPage: action.currentPage}
+    }
+    case SET_TOTAL_USERS_COUNT: {
+      return {...state, totalUsersCount: action.totalUsersCount}
     }
 
     default:
@@ -48,5 +55,7 @@ const usersReducer = (state = initialState, action) => {
 export const followAC = (userId) => ({ type: FOLLOW, userId })
 export const unfollowAC = (userId) => ({ type: UNFOLLOW, userId })
 export const setUsersAC = (users) => ({ type: SET_USERS, users })
+export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
+export const setUsersTotalCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, totalUsersCount })
 
 export default usersReducer;
