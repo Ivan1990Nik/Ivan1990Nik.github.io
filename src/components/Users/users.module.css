@@ -6,7 +6,7 @@
   border-radius: 100px;
 }
 .inner {
-
+height: 150px;
   color: aliceblue;
   padding: 5px;
   align-items: center;
@@ -63,4 +63,10 @@ margin-bottom: 15px;
   justify-content: space-between;
   margin: 10px;
   cursor: pointer;
+  position: relative;
+}
+
+.preloader {
+position: absolute;
+left: 110%;
 }
