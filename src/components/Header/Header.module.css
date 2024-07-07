@@ -8,3 +8,11 @@
   border-radius: 50%;
   margin: 4px;
 }
+
+.login {
+  font-size: 20px;
+  float: right;
+  padding-right: 15px;
+  cursor: pointer;
+}
+
