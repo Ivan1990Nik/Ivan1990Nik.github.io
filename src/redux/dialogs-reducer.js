@@ -12,7 +12,8 @@ let initialState = {
   ],
   messages: [
     { id: 1, message: "hi" },
-    { id: 2, message: "How is your olga" },
+    {
+      id: 2, message: "How is affairs olga" },
     { id: 3, message: "Yo" },
   ],
   newMessageBody: ""

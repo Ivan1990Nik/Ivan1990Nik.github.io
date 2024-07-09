@@ -3,7 +3,7 @@ import styles from "./users.module.css"
 import users from "../../assets/images/users.png"
 import Preloader from "../common/preloader/preloader";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
+import { followAPI } from "../../API/api";
 
 let Users = (props) => {
 
@@ -25,35 +25,24 @@ let Users = (props) => {
         <div >
 
           {u.followed
-            ? <button onClick={() => {
-
-              axios.delete(`https://social-network.samuraijs.com/api/1.0//follow/${u.id}`, {
-                withCredentials: true,
-                headers: {
-                  "API-KEY": "084f30d2-4614-4f7e-a605-af4533d75820"
-                }
-              })
-                .then(response => {
-                  if (response.data.resultCode == 0) {
+            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+              props.toggleFollowingProgress(true, u.id);
+              followAPI.followUsers(u.id)
+                .then(data => {
+                  if (data.resultCode === 0) {
                     props.unfollow(u.id);
                   }
-
+                  props.toggleFollowingProgress(false, u.id);
                 });
-
-
             }}>unfollow</button >
-            : <button onClick={() => {
-
-              axios.post(`https://social-network.samuraijs.com/api/1.0//follow/${u.id}`, {}, {
-                withCredentials: true,
-                headers: {
-                  "API-KEY": "084f30d2-4614-4f7e-a605-af4533d75820"
-                }
-              })
-                .then(response => {
-                  if (response.data.resultCode == 0) {
+            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+              props.toggleFollowingProgress(true, u.id);
+              followAPI.unfollowUsers(u.id)
+                .then(data => {
+                  if (data.resultCode === 0) {
                     props.follow(u.id);
                   }
+                  props.toggleFollowingProgress(false, u.id);
                 });
             }}>follow</button>}
         </div>
@@ -72,7 +61,7 @@ let Users = (props) => {
     </div>)}
     <div className={styles.countPage}>
       {pages.map((p, i) => {
-        return <span key={i} className={props.currentPage === p && styles.page} onClick={(e) => { props.onPageChanged(p); }} >{p}</span>
+        return <span key={i} className={props.currentPage === p && styles.page} onClick={(e) => { props.onPageChanged(p) }} >{p}</span>
       })}
       <div className={styles.preloader}> {props.isFetching ? <Preloader /> : null} </div>
     </div>
