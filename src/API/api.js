@@ -21,13 +21,19 @@ export const usersAPI = {
       });
   },
   unfollow(id) {
-    return instance.delete(`/follow/${id}`)
+    return instance.delete(`follow/${id}`)
     .then(Response => {
       return Response.data;
     });
   },
   follow(id) {
-    return instance.post(`/follow/${id}`)
+    return instance.post(`follow/${id}`)
+    .then(Response => {
+      return Response.data;
+    });
+  },
+  getProfile(userId) {
+    return instance.get(`profile/${userId}`)
     .then(Response => {
       return Response.data;
     });
