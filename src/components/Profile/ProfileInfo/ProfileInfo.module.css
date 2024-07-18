@@ -6,3 +6,15 @@
   
 }
 
+.status {
+  color: aliceblue;
+  color: #ffffff;
+  display: inline-block;
+  align-items: center;
+  border-radius: 30px;
+  margin: 0px 10px 5px;
+
+padding: 10px;
+  background-color: rgba(18, 31, 31, 0.507);
+  
+}

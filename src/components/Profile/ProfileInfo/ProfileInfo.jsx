@@ -10,12 +10,13 @@ const ProfileInfo = (props) => {
 
 
   return (
+
     <div >
       {/* <div className={profile.content}>
           <img alt="" src="https://kartinki.pics/uploads/posts/2021-03/thumbs/1616115428_4-p-vesna-krasivie-foto-5.jpg"/>
         </div> */}
       <img src={props.profile.photos.large} alt="" />
-      <ProfileStatus status={props.status}/>
+      <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
     </div>
 
   )

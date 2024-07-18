@@ -11,24 +11,18 @@ let initialState = {
     { id: 2, messeges: "HLorem from", likesCount: 75 },
   ],
   newPostText: "comintes",
-  profile: null
+  profile: null,
+  status: ""
 };
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:  {
-      let post = state.newPostText;
+      let post = action.addPost;
       return {
         ...state,
         posts: [...state.posts, { id: 3, messeges: post, likesCount: 0 }],
-        newPostText: ""
       };
-    }
-    case UPDATE_NEW_POST_TEXT: {
-      return  {
-        ...state,
-        newPostText: action.newText
-      }
     }
     case SET_USER_PROFILE: {
       return  {
@@ -37,7 +31,8 @@ const profileReducer = (state = initialState, action) => {
     }
     case SET_STATUS: {
       return  {
-        ...state, status: action.status
+        ...state,
+         status: action.status
       }
     }
     default:
@@ -49,12 +44,9 @@ const profileReducer = (state = initialState, action) => {
 
 
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
+export const addPostActionCreator = (addPost) => ({ type: ADD_POST, addPost })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
 export const setStatus = (status) => ({ type: SET_STATUS, status })
-export const updateNewPostTextActionCreator = (text) =>
-  ({ type: UPDATE_NEW_POST_TEXT, newText: text })
-
 export const getUserProfile = (userId) => {
   return(dispatch) => {
     profileAPI.getProfile(userId).then(data => {
@@ -63,7 +55,7 @@ export const getUserProfile = (userId) => {
   }
 }
 
-export const getUserStatus = (userId) => {
+export const getStatus = (userId) => {
   return(dispatch) => {
     profileAPI.getStatus(userId).then(data => {
       dispatch(setStatus(data));
@@ -71,7 +63,7 @@ export const getUserStatus = (userId) => {
   }
 }
 
-export const ubdateUserStatus = (status) => {
+export const updateStatus = (status) => {
   return(dispatch) => {
     profileAPI.updateStatus(status).then(data => {
       if (data.resultCode === 0) {

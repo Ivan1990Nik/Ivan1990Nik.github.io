@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className={`${nav.item} ${nav.itemtwo}`}>
           <NavLink to='/Users' className={linkActive}>Users</NavLink></div>
         <div className={nav.item}>
-          <NavLink to='/Settings' className={linkActive}>Settings</NavLink></div>
+          <NavLink /* to='/Settings' */to='/login' className={linkActive}>Settings</NavLink></div>
       </nav>
 
       </div>

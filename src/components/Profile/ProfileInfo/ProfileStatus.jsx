@@ -8,7 +8,7 @@ class ProfileStatus extends React.Component {
 
   state = {
     editMode: false,
-    status:this.props.status
+    status: this.props.status
   }
 
   activateEditMode = () => {
@@ -18,32 +18,41 @@ class ProfileStatus extends React.Component {
 
   }
   deActivateEditMode = () => {
+
     this.setState({
       editMode: false
-    } );
+    });
     this.props.updateStatus(this.state.status);
-    
+
   }
 
   onStatusChenge = (e) => {
     this.setState({
       status:
-      e.currentTarget.value
+        e.currentTarget.value
     })
-   
   }
-  render() {
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.status !== this.props.status) {
+      this.setState({
+        status: this.props.status
+      });
+    }
+
+  }
+
+  render() {
     return (
       <div>
         {!this.state.editMode &&
           <div >
-            <div onDoubleClick={ this.activateEditMode } >{this.props.status}</div>
+            <div className={profile.status} onDoubleClick={this.activateEditMode} >{this.props.status || "fack"}</div>
           </div>
         }
         {this.state.editMode &&
           <div >
-            <input onChange={this.onStatusChenge} value={this.state.status} autoFocus={true} onBlur={ this.deActivateEditMode}></input>
+            <input className={profile.status} onChange={this.onStatusChenge} value={this.state.status} autoFocus={true} onBlur={this.deActivateEditMode}></input>
           </div>
         }
       </div>
