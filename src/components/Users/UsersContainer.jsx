@@ -31,7 +31,7 @@ class UsersContainer extends React.Component {
   }
 }
 
-/* let AuthRedirectConponen = withAuthRedirect(UsersContainer) */
+
 
 let mapStateToProps = (state) => {
   return {
