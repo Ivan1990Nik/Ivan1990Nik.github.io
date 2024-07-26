@@ -1,4 +1,5 @@
 import React from "react";
+import style from "../../components/common/preloader/FormsControls/FormsControls.module.css"
 /* import Loginform from "./Loginform"; */
 /* import LoginReduxform from "./Loginform"; */
 
@@ -29,6 +30,9 @@ const Loginform = (props) => {
       <div>
         <Field type={"checkbox"} component={Input} name={"rememberMe"} /> remember me
       </div>
+      <div className={style.formSummaryError}>
+        {props.error}
+      </div>
       <div>
         <button>Login
         </button>
@@ -45,7 +49,7 @@ const Login = (props) => {
     props.login(formData.email, formData.password, formData.rememberMe)
 
   }
-  if(props.isAuth) {
+  if (props.isAuth) {
     return <Navigate to={"/profile"} />
   }
   return <div>
