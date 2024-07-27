@@ -30,9 +30,9 @@ const Loginform = (props) => {
       <div>
         <Field type={"checkbox"} component={Input} name={"rememberMe"} /> remember me
       </div>
-      <div className={style.formSummaryError}>
+      {props.error && <div className={style.formSummaryError}>
         {props.error}
-      </div>
+      </div>}
       <div>
         <button>Login
         </button>

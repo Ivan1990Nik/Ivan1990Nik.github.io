@@ -13,6 +13,12 @@
 
 
 .formSummaryError {
+  font-size: 20px;
+  margin: 5px;
   padding: 5px;
   color: red;
+  border: solid 1px red;
+  width: 300px;
+  border-radius: 50px;
+  text-align: center;
 }

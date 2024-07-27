@@ -27,31 +27,26 @@ export const setAuthUserData = (id, email, login, isAuth) => ({
   data: { id, email, login, isAuth },
 });
 export const miAuth = () => (dispatch) => {
-    authAPI.authMe().then((data) => {
-      if (data.resultCode === 0) {
-        let { id, email, login } = data.data;
-        dispatch(setAuthUserData(id, email, login, true));
-      }
-    });
-  };
-
+  authAPI.authMe().then((data) => {
+    if (data.resultCode === 0) {
+      let { id, email, login } = data.data;
+      dispatch(setAuthUserData(id, email, login, true));
+    }
+  });
+};
 
 export const login = (email, password, rememberMe) => (dispatch) => {
-  let action =stopSubmit("login", {_error: "Email is wrong"});
-      dispatch(action) 
-      return;
   authAPI.login(email, password, rememberMe).then((data) => {
     if (data.resultCode === 0) {
-      dispatch(miAuth())
+      dispatch(miAuth());
     } else {
-      let action =stopSubmit("login", {email: "Email is wrong"});
-      dispatch(action)
+      let message = data.messages.length > 0 ? data.messages[0] : "Some error";
+      dispatch(stopSubmit("login", { _error: message }));
     }
   });
 };
 export const logout = () => (dispatch) => {
-  authAPI.logout()
-  .then((data) => {
+  authAPI.logout().then((data) => {
     if (data.resultCode === 0) {
       dispatch(setAuthUserData(null, null, null, false));
     }
