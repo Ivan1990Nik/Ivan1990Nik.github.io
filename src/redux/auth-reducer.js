@@ -27,12 +27,13 @@ export const setAuthUserData = (id, email, login, isAuth) => ({
   data: { id, email, login, isAuth },
 });
 export const miAuth = () => (dispatch) => {
-  authAPI.authMe().then((data) => {
-    if (data.resultCode === 0) {
-      let { id, email, login } = data.data;
-      dispatch(setAuthUserData(id, email, login, true));
-    }
-  });
+ return authAPI.authMe()
+    .then((data) => {
+      if (data.resultCode === 0) {
+        let { id, email, login } = data.data;
+        dispatch(setAuthUserData(id, email, login, true));
+      }
+    });
 };
 
 export const login = (email, password, rememberMe) => (dispatch) => {

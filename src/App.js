@@ -8,16 +8,22 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import { miAuth } from "./redux/auth-reducer";
 import { connect } from "react-redux";
 import { compose } from "redux";
+import { initializeApp } from "./redux/app-reducery";
+import Preloader from "./components/common/preloader/preloader";
 
 
 class App extends Component  {
     componentDidMount() {
-this.props.miAuth();
-  }
-  render() {
+this.props.initializeApp();
+}
+
+
+render() {
+if (!this.props.initialized) {
+  return <Preloader />
+}
   return (
     <div className="app-wraper">
       <HeaderContainer />
@@ -37,7 +43,9 @@ this.props.miAuth();
   );
 }
 };
-
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
 export default compose ( 
- /*  useLocation, */
-  connect(null, {miAuth}))(App);
+/*   useLocation, */
+  connect(mapStateToProps, {initializeApp}))(App);
